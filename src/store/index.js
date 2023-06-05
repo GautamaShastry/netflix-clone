@@ -73,7 +73,7 @@ export const fetchMovies = createAsyncThunk("netflix/trending", async ({ type },
     async (email) => {
       const {
         data: { movies },
-      } = await axios.get(`http://localhost:5000/api/user/liked/${email}`);
+      } = await axios.get(`https://netflix-clone-api-d59a.onrender.com/api/user/liked/${email}`);
     //   console.log(movies);
       return movies;
     }
@@ -84,7 +84,7 @@ export const fetchMovies = createAsyncThunk("netflix/trending", async ({ type },
     async ({ email, movieId }) => {
         const {
             data: { movies },
-        } = await axios.put(`http://localhost:5000/api/user/remove`,{
+        } = await axios.put(`https://netflix-clone-api-d59a.onrender.com/api/user/remove`,{
             email, movieId
         });
         return movies;
